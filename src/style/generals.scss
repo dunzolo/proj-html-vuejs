@@ -1,8 +1,18 @@
 @import "../../node_modules/@fortawesome/fontawesome-free/css/all.min.css";
 @import "node_modules/bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lora', serif;
+}
+
+h1 {
+    font-family: 'Bebas Neue', cursive;
 }
