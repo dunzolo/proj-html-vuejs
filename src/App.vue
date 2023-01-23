@@ -1,9 +1,11 @@
 <script>
 import AppHeader from './components/AppHeader.vue';
+import AppJumbotron from './components/AppJumbotron.vue';
 
 export default {
   components: {
-    AppHeader
+    AppHeader,
+    AppJumbotron
   },
   data() {
     return {
@@ -45,6 +47,7 @@ export default {
 <template lang="">
   <div>
     <AppHeader :navbar_list="array_navbar"/>
+    <AppJumbotron/>
   </div>
 </template>
 

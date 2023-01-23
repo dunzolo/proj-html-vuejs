@@ -10,7 +10,7 @@ export default {
     <header>
         <div class="container-header">
             <div class="logo">
-                <img src="/logo-restaurant-2x-200x38.png" alt="logo">
+                <img src="/logo-restaurant-2x.png" alt="logo">
             </div>
             <div>
                 <ul class="unstyled-list">
@@ -27,7 +27,9 @@ export default {
 
 <style lang="scss" scoped>
 header {
-    background-color: black;
+    background-color: transparent;
+    position: absolute;
+    width: 100%;
 
     .container-header {
         display: flex;
@@ -37,9 +39,14 @@ header {
         margin: 0 auto;
         padding: 2rem;
 
+        .logo img {
+            width: 250px;
+        }
+
         ul {
             list-style-type: none;
             display: flex;
+            margin-bottom: 0px; //bootstrap aggiunge di default margin-bottom
 
             li a {
                 text-decoration: none;
