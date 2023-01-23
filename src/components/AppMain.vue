@@ -6,6 +6,7 @@ export default {
 
 <template lang="">
     <main>
+        <!-- first section -->
         <div class="container">
             <div class="row">
                 <div class="col-6">
@@ -26,8 +27,7 @@ export default {
                     <img class="image-full" src="/info22x.jpg" alt="">
                 </div>
             </div>
-        </div>
-        <div class="container">
+            <!-- row cards -->
             <div class="row text-center">
                 <div class="col-4">
                     <img class="icon" src="/sushi-1.png" alt="">
@@ -51,6 +51,25 @@ export default {
                     <button>LEARN MORE ABOUT US</button>
                 </div>  
             </div>
+        </div>
+        <!-- second section -->
+        <div class="container-full">
+                <div class="image-full"></div>
+                <div class="caption-right">
+                    <div class="container">
+                    <div class="col-3">
+                        <span>________</span>
+                    </div>
+                    <div class="col-9">
+                        <p>FINE DINING EXPERIENCE</p>
+                        <h1>THE BEST TABLE IN TOWN</h1>
+                        <p>Pellentesque vitae viverra risus, sagittis. Venenatis ridiculus scelerisque nisi in urna nulla.</p>
+                        <button>EXPLORE THE MENU</button>
+                        
+                    </div>
+                </div>
+                </div>
+
 
         </div>
     </main>
@@ -98,5 +117,40 @@ export default {
             padding: 2rem;
         }
     }
+}
+
+.container-full {
+    height: 800px;
+    display: flex;
+
+
+
+    .image-full {
+        width: 60%;
+        height: 100%;
+        background-image: url('/slider32x.jpg');
+        background-size: 120%;
+    }
+
+
+    .caption-right {
+        width: 40%;
+        height: 100%;
+        background-color: black;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .container {
+            display: flex;
+            padding: 4rem;
+
+            h1 {
+                font-size: 80px;
+            }
+        }
+    }
+
 }
 </style>
