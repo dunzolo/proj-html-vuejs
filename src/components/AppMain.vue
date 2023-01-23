@@ -27,13 +27,37 @@ export default {
                 </div>
             </div>
         </div>
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-4">
+                    <img class="icon" src="/sushi-1.png" alt="">
+                    <h2>The best table in town</h2>
+                    <hr>
+                    <p>Sed aenean egestas ut aliquam turpis mauris, molestie. Vitae tellus tempor sem id tempus neque, tellus turpis turpis. Morbi tortor id gravida aliquet.</p>
+                    <button>EXPLORE THE MENU</button>
+                </div>
+                <div class="col-4">
+                    <img class="icon" src="/sushi-2.png" alt="">
+                    <h2>Perfect For Groups</h2>
+                    <hr>
+                    <p>Quam eu proin sit massa condimentum. Volutpat non pulvinar aliquet nunc. Orci elementum in aliquet a gravida vivamus aliquam turpis vitae.</p>
+                    <button>BUY AVADA TODAY</button>
+                </div>
+                <div class="col-4">
+                    <img class="icon" src="/sushi-3.png" alt="">
+                    <h2>Fresh produce everyday</h2>
+                    <hr>
+                    <p>Hendrerit amet, volutpat leo non, commodo maecenas scelerisque tincidunt. Morbi vulputate morbi purus quisque sit sagittis orci elementum gravida.</p>
+                    <button>LEARN MORE ABOUT US</button>
+                </div>  
+            </div>
+
+        </div>
     </main>
 </template>
 
 <style lang="scss" scoped>
 .container {
-    height: 700px;
-
     .row {
         padding-top: 7rem;
     }
@@ -59,6 +83,19 @@ export default {
             height: 700px;
             width: 100%;
             object-fit: cover;
+        }
+    }
+
+    .col-4 {
+        padding: 0 3rem 7rem;
+
+        p {
+            font-size: 18px;
+            padding-bottom: 1rem;
+        }
+
+        .icon {
+            padding: 2rem;
         }
     }
 }
