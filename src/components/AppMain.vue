@@ -54,9 +54,9 @@ export default {
         </div>
         <!-- second section -->
         <div class="container-full">
-                <div class="image-full"></div>
-                <div class="caption-right">
-                    <div class="container">
+            <div class="image-full"></div>
+            <div class="caption-right">
+                <div class="container">
                     <div class="col-3">
                         <span>________</span>
                     </div>
@@ -65,12 +65,40 @@ export default {
                         <h1>THE BEST TABLE IN TOWN</h1>
                         <p>Pellentesque vitae viverra risus, sagittis. Venenatis ridiculus scelerisque nisi in urna nulla.</p>
                         <button>EXPLORE THE MENU</button>
-                        
                     </div>
                 </div>
+            </div>
+        </div>
+        <!-- third section -->
+        <div id="third-section" class="container">
+            <div class="row"> 
+            <h1 class="text-center">What critics are saying about us</h1>
+            <hr>
+                <div class="col-6">
+                    <img src="/blog72x-1200x1375.jpg" alt="">
                 </div>
-
-
+                <div class="col-6">
+                    <div class="container">
+                        <p>MEGGY STEWART</p>
+                        <h1>NEW YORK TIMES</h1>
+                        <div>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <hr>
+                        <p>
+                            Non arcu mauris tortor ultrices mollis tellus euismod fermentum. Habitant amet tincidunt id sapien accumsan sed at.
+                        </p>
+                        <p>
+                            Mmalesuada ullamcorper amet. Pretium pretium dignissim nisi. 
+                        </p>
+                        <button>READ FULL ARTICLE</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 </template>
@@ -152,5 +180,24 @@ export default {
         }
     }
 
+}
+
+#third-section {
+
+    .col-6 {
+        padding: 0;
+        background-color: black;
+        color: white;
+
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+
+        .container {
+            padding: 5rem;
+        }
+    }
 }
 </style>
