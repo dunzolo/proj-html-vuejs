@@ -78,7 +78,7 @@ export default {
                     <img src="/blog72x-1200x1375.jpg" alt="">
                 </div>
                 <div class="col-6">
-                    <div class="container">
+                    <div class="container bg-black">
                         <p>MEGGY STEWART</p>
                         <h1>NEW YORK TIMES</h1>
                         <div>
@@ -97,6 +97,50 @@ export default {
                         </p>
                         <button>READ FULL ARTICLE</button>
                     </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 pe-4">
+                    <div class="image-left">
+                        <div class="container">
+                            <p>MARY MAXEY</p>
+                            <h1>THE GUARDIAN</h1>
+                            <div>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <hr>
+                            <p>
+                                Non arcu mauris tortor ultrices mollis tellus euismod fermentum. Habitant amet tincidunt id sapien accumsan sed.
+                            </p>
+                            <button>READ FULL ARTICLE</button>
+                        </div>
+                    </div>
+                     <!-- <img src="/info52x.jpg" alt=""> -->
+                </div>
+                <div class="col-6 ps-4">
+                    <div class="image-right">
+                        <div class="container">
+                            <p>PATRICK MONROE</p>
+                            <h1>GLOBE AND MAIL</h1>
+                            <div>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <hr>
+                            <p>
+                                Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Nulla porttitor accumsan tincidunt.
+                            </p>
+                            <button>READ FULL ARTICLE</button>
+                        </div>
+                    </div>
+                    <!-- <img src="/info12x.jpg" alt=""> -->
                 </div>
             </div>
         </div>
@@ -184,20 +228,50 @@ export default {
 
 #third-section {
 
-    .col-6 {
-        padding: 0;
-        background-color: black;
-        color: white;
+    .row {
+        padding-top: 5rem;
 
-        img {
-            object-fit: cover;
+        .image-left {
+            background-image: linear-gradient(black, transparent), url('/info52x.jpg');
+            background-size: 100%;
+            height: 700px;
             width: 100%;
-            height: 100%;
+            object-fit: cover;
+            color: white
         }
 
-        .container {
-            padding: 5rem;
+        .image-right {
+            background-image: linear-gradient(black, transparent), url('/info12x.jpg');
+            background-size: 100%;
+            height: 700px;
+            width: 100%;
+            object-fit: cover;
+            color: white
+        }
+
+        .col-6.image-right {
+            padding-left: 2rem;
+        }
+
+        .col-6.image-left {
+            padding-right: 2rem;
+        }
+
+        .col-6 {
+            padding: 0;
+            color: white;
+
+            img {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+
+            .container {
+                padding: 5rem;
+            }
         }
     }
+
 }
 </style>
