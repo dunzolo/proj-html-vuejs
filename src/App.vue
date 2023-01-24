@@ -14,11 +14,19 @@ export default {
       array_navbar: [
         {
           label: 'Home',
-          url: '#'
+          url: '#',
+          tag_list: [
+            'Alternate Homepage 1', 'Alternate Homepage 2'
+          ],
+          isVisibile: false
+
         },
         {
           label: 'History',
-          url: '#'
+          url: '#',
+          dropdown_menu: [
+            'Reception & Bar'
+          ]
         },
         {
           label: 'Team',
@@ -30,7 +38,10 @@ export default {
         },
         {
           label: 'Takeout',
-          url: '#'
+          url: '#',
+          dropdown_menu: [
+            'Simple Product', 'Variable Product'
+          ]
         },
         {
           label: 'Bulletin',

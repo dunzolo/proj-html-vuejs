@@ -152,6 +152,14 @@ export default {
                 </div>
             </div>
         </div>
+        <!-- fifth section -->
+        <div id="fifth-section">
+            <div class="container">
+                <h1>Latest news & promotions</h1>
+                <hr>
+            </div>
+
+        </div>
     </main>
 </template>
 

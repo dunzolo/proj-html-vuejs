@@ -2,7 +2,7 @@
 export default {
     props: {
         navbar_list: Object
-    }
+    },
 }
 </script>
 
@@ -14,9 +14,14 @@ export default {
             </div>
             <div>
                 <ul class="unstyled-list">
-                    <li v-for="(item, index) in navbar_list" :key="index">
-                        <a href="">
+                    <li v-for="(item, index) in navbar_list" :key="index" @click="item.isVisible = true">
+                        <a>
                             {{ item.label }}
+                            <ul v-if="item.isVisible">
+                                <li v-for="(item, index) in item.tag_list" :key="index">
+                                    {{ item }}
+                                </li>
+                            </ul>
                         </a>
                     </li>
                 </ul>
@@ -43,7 +48,7 @@ header {
             width: 250px;
         }
 
-        ul {
+        .unstyled-list {
             list-style-type: none;
             display: flex;
             margin-bottom: 0px; //bootstrap aggiunge di default margin-bottom
@@ -52,6 +57,13 @@ header {
                 text-decoration: none;
                 color: white;
                 padding: 10px;
+            }
+
+            .dropdown {
+                background-color: red;
+                height: 100px;
+                width: 100px;
+                border: 1px solid black
             }
         }
     }
