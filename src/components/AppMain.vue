@@ -144,6 +144,14 @@ export default {
                 </div>
             </div>
         </div>
+        <!-- fourth section -->
+        <div id="fourt-section">
+            <div class="container-full">
+                <div class="row">
+                    <p class="caption">KUNG PAO CHICKEN - $32</p>
+                </div>
+            </div>
+        </div>
     </main>
 </template>
 
@@ -273,5 +281,30 @@ export default {
         }
     }
 
+}
+
+#fourt-section {
+    .container-full {
+        height: 500px;
+        margin-top: 7rem;
+
+        .row {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('/page52x.jpg');
+            background-size: 150%;
+            background-position: center;
+            position: relative;
+
+            .caption {
+                font-weight: 700;
+                position: absolute;
+                bottom: 10px;
+                left: 45%;
+                color: white;
+            }
+        }
+    }
 }
 </style>
