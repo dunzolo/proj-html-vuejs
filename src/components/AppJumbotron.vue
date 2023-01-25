@@ -9,28 +9,26 @@ export default {
         <div class="container-full">
             <div class="jumbotron-left">
                 <div class="container">
-                    <div class="col-3">
-                        <span>________</span>
+                    <div class="col-2">
+                        <div class="line"></div>
                     </div>
-                    <div class="col-9">
-                        <p>THE BEST TABLE IN TOWN</p>
+                    <div class="col-10">
+                        <span class="font-work-sans">THE BEST TABLE IN TOWN</span>
                         <h1>FINE DINING EXPERIENCE</h1>
                         <p>Pellentesque vitae viverra risus, sagittis. Venenatis ridiculus scelerisque nisi in urna nulla. Sit tempor a et nisl, ac felis.</p>
-                        <button>EXPLORE THE MENU</button>
+                        <button class="btn btn-outline-light">BUY AVADA TODAY</button>
                         
                     </div>
                 </div>
             </div>
-            <div class="jumbotron-right">
-                <img src="/slider52x.jpg" alt="image-jumbotron">
-            </div>
+            <div class="jumbotron-right"></div>
         </div>
     </div>
 </template>
 
 <style lang="scss" scoped>
 .jumbotron {
-    height: 1000px;
+    height: 950px;
 
     .container-full {
         width: 100%;
@@ -39,13 +37,9 @@ export default {
 
         .jumbotron-right {
             width: 50%;
-            height: 100%;
-
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), transparent), url('/slider52x.jpg');
+            background-size: cover;
+            background-position: center;
         }
 
         .jumbotron-left {
@@ -58,10 +52,33 @@ export default {
 
             .container {
                 display: flex;
-                padding: 10rem;
+                padding: 0 10rem;
+
+                .line {
+                    width: 50%;
+                    height: 1px;
+                    background-color: white;
+                    margin-top: 10px;
+                }
 
                 h1 {
-                    font-size: 80px;
+                    font-size: 90px;
+                    padding: 3rem 0;
+                }
+
+                p {
+                    font-size: 20px;
+                    padding-bottom: 3rem;
+                }
+
+                .btn {
+                    font-family: 'Work Sans', sans-serif;
+                    padding: 10px 20px;
+                }
+
+
+                .font-work-sans {
+                    font-family: 'Work Sans', sans-serif;
                 }
             }
 
