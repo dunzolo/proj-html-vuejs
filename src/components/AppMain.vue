@@ -178,7 +178,117 @@ export default {
                 </div>
             </div>
         </div>
-        
+        <!-- sixth section -->
+        <div id="sixth-section" class="container-full">
+            <div class="image-full"></div>
+            <div class="caption-right">
+                <div class="container">
+                    <div class="col-3">
+                        <span>________</span>
+                    </div>
+                    <div class="col-9">
+                        <p>ENJOY YOUR MEAL AT HOME</p>
+                        <h1>TAKEOUT NOW AVAILABLE</h1>
+                        <p>Pellentesque vitae viverra risus, sagittis. Venenatis ridiculus scelerisque nisi in urna nulla non arcu moris tortor.</p>
+                        <button>VIEW TAKEOUT MENU</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- seventh section -->
+        <div id="seventh-section" class="container-large"> 
+            <div class="row">
+                <div class="col-4">
+                    <div class="container">
+                        <h1>HORS D’OEUVRES</h1>
+                        <div>
+                            <h2>AHI SALMON NIGIRI</h2>
+                            <p>Eget vulputate vitae quis rutrum blandit sed. Quam nulla sit lacinia.</p>
+                            <span>$48</span>
+                        </div>
+                        <div>
+                            <h2>UMI MASU SALAD</h2>
+                            <p>Mollis ornare sit sapien, sodales. Cursus duis proin semper quisque.</p>
+                            <span>$21</span>
+                        </div>
+                        <div>
+                            <h2>TEMAKI WITH CRAB</h2>
+                            <p>Ac vel, risus ornare senectus placerat duis amet dictumst tellus.</p>
+                            <span>$32</span>
+                        </div>
+                        <div>
+                            <h2>CALIFORNIA ROLLS</h2>
+                            <p>Ac vel, risus ornare senectus placerat duis amet dictumst tellus.</p>
+                            <span>$22</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 menu">
+                    <div class="container">
+                        <h1>MAIN COURSE</h1>
+                        <div>
+                            <h2>BRAISED ABALONE</h2>
+                            <p>Mollis ornare sit sapien, sodales. Cursus duis proin semper quisque.</p>
+                            <span>$52</span>
+                        </div>
+                        <div>
+                            <h2>TWICE COOKED PORK</h2>
+                            <p>Ac vel, risus ornare senectus placerat duis amet dictumst tellus.</p>
+                            <span>$21</span>
+                        </div>
+                        <div>
+                            <h2>KUNG PAO CHICKEN</h2>
+                            <p>Quis duis sit dictum aliquam a velit enim. Tellus in sit augue aliquam.</p>
+                            <span>$32</span>
+                        </div>
+                        <div>
+                            <h2>CHAR SIU & SUSHIS</h2>
+                            <p>Feugiat rhoncus ipsum tristique purus diam, et dolor molestie.</p>
+                            <span>$48</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="container">
+                        <h1>DESSERTS</h1>
+                        <div>
+                            <h2>CHOCOLATE BALL CAKE</h2>
+                            <p>In pellentesque in felis massa vehicula. In sed euismod ut.</p>
+                            <span>$13</span>
+                        </div>
+                        <div>
+                            <h2>LIME PIE WITH CRUST</h2>
+                            <p>Mollis ornare sit sapien, sodales. Cursus duis proin semper quisque.</p>
+                            <span>$14</span>
+                        </div>
+                        <div>
+                            <h2>RASBERRY PEAR CAKE</h2>
+                            <p>Eget vulputate vitae quis rutrum blandit sed. Quam nulla sit.</p>
+                            <span>$18</span>
+                        </div>
+                        <div>
+                            <h2>CAFE' AU LAIT</h2>
+                            <p>Eget vulputate vitae quis rutrum blandit sed. Quam nulla sit.</p>
+                            <span>$6</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- eigth section -->
+        <div id="eigth-section">
+            <div class="container-full">
+                <div class="row">
+                    <div class="box">
+                        <h1>BRAISED ABALONE</h1>
+                        <span>$52</span>
+                        <hr>
+                        <p>Pretium accumsan porttitor viverra leo gravida mollis imperdiet. Fringilla nibh pharetra sociis leo amet.</p>
+                        <button>BUY AVADA TODAY</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 </template>
 
@@ -353,6 +463,75 @@ export default {
                     width: 100%;
                     height: 600px;
                 }
+            }
+        }
+    }
+}
+
+#sixth-section {
+    .image-full {
+        width: 60%;
+        height: 100%;
+        background-image: url('/slider72x-scaled.jpg');
+        background-size: 120%;
+    }
+}
+
+#seventh-section.container-large {
+    width: 90%;
+    margin: 0 auto;
+    // height: 300px;
+
+    .row {
+        height: 100%;
+        padding: 5rem 0;
+
+        .col-4 {
+            padding: 0;
+            margin-top: 3rem;
+            height: 100%;
+            background-color: #E8E8E8;
+
+            &.menu {
+                margin-top: 0;
+                background-image: linear-gradient(black, transparent), url('/misc22x.jpg');
+                background-size: 120%;
+                background-position: 0;
+                color: white;
+
+            }
+
+            .container {
+                margin-top: 2rem;
+                margin-bottom: 2rem;
+                width: 80%;
+            }
+        }
+
+    }
+
+}
+
+#eigth-section {
+    .container-full {
+        height: 800px;
+
+        .row {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('/hero42x.jpg');
+            background-size: 100%;
+            position: relative;
+
+            .box {
+                position: absolute;
+                top: 10%;
+                left: 10%;
+                background-color: black;
+                color: white;
+                width: 500px;
+                padding: 5rem;
             }
         }
     }
