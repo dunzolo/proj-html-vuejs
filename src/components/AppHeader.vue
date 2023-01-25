@@ -25,11 +25,13 @@ export default {
             <div>
                 <ul class="unstyled-list">
                     <li v-for="(item, index) in navbar_list" :key="index" @mouseover="showDropdown(index)" @mouseleave="this.index_visible = ''">
-                        <a>
-                            {{ item.label }}
+                        <a :href="item.url" :class="item.active  ? 'active' : ''">
+                            <span>{{ (item.label).toUpperCase() }}</span>
+                            <span class="label-new" v-if="item.label_new">{{ (item.label_new).toUpperCase() }}</span>
+                            <span v-if="item.dropdown_list"><i class="fa-solid fa-angle-down"></i></span>
                             <ul class="dropdown-list" v-if="item.dropdown_list && index_visible === index">
-                                <li v-for="(item, index) in item.dropdown_list" :key="index">
-                                    {{ item }}
+                                <li v-for="(i, index) in item.dropdown_list" :key="index">
+                                    <span>{{ i }}</span>
                                 </li>
                             </ul>
                             <ul class="dropdown-box" v-if="item.dropdown_box && index_visible === index">
@@ -74,13 +76,44 @@ header {
         .unstyled-list {
             list-style-type: none;
             display: flex;
+            align-items: center;
             margin-bottom: 0px; //bootstrap aggiunge di default margin-bottom
             cursor: pointer;
+            font-family: 'Work Sans', sans-serif;
+
+            li {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
 
             li a {
                 text-decoration: none;
-                color: white;
-                padding: 30px;
+                color: grey;
+                padding: 0px 20px;
+                font-size: 15px;
+                display: flex;
+                align-items: center;
+
+
+                &.active {
+                    color: white;
+                }
+
+                &:hover {
+                    color: white;
+                }
+
+                .label-new {
+                    font-size: 12px;
+                    margin-left: 0.5rem;
+                    padding: 0 0.25rem;
+                    border: 1px solid grey;
+                }
+
+                .fa-angle-down {
+                    padding-left: 0.5rem;
+                }
             }
 
             .dropdown-list {
@@ -98,8 +131,6 @@ header {
                     &:hover {
                         background-color: #BDA16B;
                         border-radius: 5px;
-
-
                     }
                 }
             }

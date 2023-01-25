@@ -17,6 +17,7 @@ export default {
         {
           label: 'Home',
           url: '#',
+          active: true,
           dropdown_list: [
             'Alternate Homepage 1', 'Alternate Homepage 2'
           ]
@@ -24,17 +25,20 @@ export default {
         {
           label: 'History',
           url: '#',
+          active: false,
           dropdown_list: [
             'Reception & Bar'
           ]
         },
         {
           label: 'Team',
-          url: '#'
+          url: '#',
+          active: false,
         },
         {
           label: 'Menu',
           url: '#',
+          active: false,
           dropdown_box: [
             {
               title: 'titolo',
@@ -64,18 +68,22 @@ export default {
         },
         {
           label: 'Takeout',
+          label_new: 'New',
           url: '#',
+          active: false,
           dropdown_list: [
             'Simple Product', 'Variable Product'
           ]
         },
         {
           label: 'Bulletin',
-          url: '#'
+          url: '#',
+          active: false,
         },
         {
           label: 'Reservation',
-          url: '#'
+          url: '#',
+          active: false,
         }
       ],
       array_footer: [
