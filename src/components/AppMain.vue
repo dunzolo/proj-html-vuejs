@@ -72,7 +72,7 @@ export default {
         <!-- third section -->
         <div id="third-section" class="container">
             <h1 class="title">What critics are saying about us</h1>
-            <hr>
+            <hr class="center">
             <div class="row"> 
                 <div class="col-6">
                     <img src="/blog72x-1200x1375.jpg" alt="">
@@ -80,7 +80,7 @@ export default {
                 <div class="col-6">
                     <div class="container bg-black">
                         <span class="font-work-sans">MEGGY STEWART</span>
-                        <h1>NEW YORK TIMES</h1>
+                        <h2>NEW YORK TIMES</h2>
                         <div>
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
@@ -103,8 +103,8 @@ export default {
                 <div class="col-6 pe-4">
                     <div class="image-left">
                         <div class="container">
-                            <p>MARY MAXEY</p>
-                            <h1>THE GUARDIAN</h1>
+                            <span class="font-work-sans">MARY MAXEY</span>
+                            <h2>THE GUARDIAN</h2>
                             <div>
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
@@ -116,7 +116,7 @@ export default {
                             <p>
                                 Non arcu mauris tortor ultrices mollis tellus euismod fermentum. Habitant amet tincidunt id sapien accumsan sed.
                             </p>
-                            <button>READ FULL ARTICLE</button>
+                            <button class="btn btn-outline-light">READ FULL ARTICLE</button>
                         </div>
                     </div>
                      <!-- <img src="/info52x.jpg" alt=""> -->
@@ -124,8 +124,8 @@ export default {
                 <div class="col-6 ps-4">
                     <div class="image-right">
                         <div class="container">
-                            <span>PATRICK MONROE</span>
-                            <h1>GLOBE AND MAIL</h1>
+                            <span class="font-work-sans">PATRICK MONROE</span>
+                            <h2>GLOBE AND MAIL</h2>
                             <div>
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
@@ -137,7 +137,7 @@ export default {
                             <p>
                                 Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Nulla porttitor accumsan tincidunt.
                             </p>
-                            <button>READ FULL ARTICLE</button>
+                            <button class="btn btn-outline-light">READ FULL ARTICLE</button>
                         </div>
                     </div>
                     <!-- <img src="/info12x.jpg" alt=""> -->
@@ -409,7 +409,10 @@ export default {
 
     hr {
         width: 10%;
-        margin: 1rem auto
+    }
+
+    hr.center {
+        margin: 1rem auto;
     }
 
     .row {
@@ -452,10 +455,16 @@ export default {
             }
 
             .container {
-                padding: 5rem;
+                padding: 7rem;
+
+                h2 {
+                    font-size: 70px;
+                    padding: 3rem 0;
+                }
 
                 i {
                     padding-right: 15px;
+                    padding-bottom: 3rem;
                 }
 
                 .btn {
