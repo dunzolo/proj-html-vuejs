@@ -156,12 +156,29 @@ export default {
         </div>
         <!-- fifth section -->
         <div id="fifth-section">
-            <div class="container">
+            <div class="container text-center">
                 <h1>Latest news & promotions</h1>
                 <hr>
+                <div class="row">
+                    <div class="col-4">
+                        <img src="/blog92x-1200x1375.jpg" alt="">
+                        <h2>THE BEST COFFEE IN TOWN</h2>
+                        <p>By admin|January 7th, 2020|Categories: News</p>
+                    </div>
+                    <div class="col-4">
+                        <img src="/blog72x-1200x1375.jpg" alt="">
+                        <h2>DISCOVER OUR NEW MENU</h2>
+                        <p>By admin|January 7th, 2020|Categories: News</p>
+                    </div>
+                    <div class="col-4">
+                        <img src="/blog82x-1200x1375.jpg" alt="">
+                        <h2>WE NOW ACCEPT SQUARE!</h2>
+                        <p>By admin|January 7th, 2020|Categories: News</p>
+                    </div>
+                </div>
             </div>
-
         </div>
+        
     </main>
 </template>
 
@@ -312,6 +329,30 @@ export default {
                 position: absolute;
                 bottom: 10px;
                 color: white;
+            }
+        }
+    }
+}
+
+#fifth-section {
+    .container {
+        padding-top: 3rem;
+
+        hr {
+            width: 10%;
+            margin: auto;
+        }
+
+        .row {
+            padding-top: 2rem;
+
+            .col-4 {
+                padding: 0 1rem;
+
+                img {
+                    width: 100%;
+                    height: 600px;
+                }
             }
         }
     }
