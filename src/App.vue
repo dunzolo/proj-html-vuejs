@@ -2,12 +2,14 @@
 import AppHeader from './components/AppHeader.vue';
 import AppJumbotron from './components/AppJumbotron.vue';
 import AppMain from './components/AppMain.vue';
+import AppFooter from './components/AppFooter.vue';
 
 export default {
   components: {
     AppHeader,
     AppJumbotron,
-    AppMain
+    AppMain,
+    AppFooter
   },
   data() {
     return {
@@ -17,9 +19,7 @@ export default {
           url: '#',
           dropdown_list: [
             'Alternate Homepage 1', 'Alternate Homepage 2'
-          ],
-          is_visible: false
-
+          ]
         },
         {
           label: 'History',
@@ -77,6 +77,33 @@ export default {
           label: 'Reservation',
           url: '#'
         }
+      ],
+      array_footer: [
+        {
+          label: 'Facebook',
+          icon: 'fa-brands fa-facebook-f',
+          active: false
+        },
+        {
+          label: 'Twitter',
+          icon: 'fa-brands fa-twitter fa',
+          active: false
+        },
+        {
+          label: 'Instagram',
+          icon: 'fa-brands fa-instagram',
+          active: false
+        },
+        {
+          label: 'Youtube',
+          icon: 'fa-brands fa-youtube',
+          active: false
+        },
+        {
+          label: 'LinkedIn',
+          icon: 'fa-brands fa-linkedin-in',
+          active: false
+        },
       ]
     }
   },
@@ -88,6 +115,7 @@ export default {
     <AppHeader :navbar_list="array_navbar"/>
     <AppJumbotron/>
     <AppMain/>
+    <AppFooter :footer_list="array_footer"/>
   </div>
 </template>
 

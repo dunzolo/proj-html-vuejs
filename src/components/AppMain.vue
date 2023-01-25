@@ -148,7 +148,9 @@ export default {
         <div id="fourt-section">
             <div class="container-full">
                 <div class="row">
-                    <p class="caption">KUNG PAO CHICKEN - $32</p>
+                    <div class="col-12 text-center">
+                        <span class="caption">KUNG PAO CHICKEN - $32</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -309,7 +311,6 @@ export default {
                 font-weight: 700;
                 position: absolute;
                 bottom: 10px;
-                left: 45%;
                 color: white;
             }
         }

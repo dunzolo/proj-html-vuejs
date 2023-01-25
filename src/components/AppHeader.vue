@@ -44,6 +44,7 @@ export default {
                             </ul>
                         </a>
                     </li>
+                    <i class="fa-solid fa-cart-shopping text-light"></i>
                 </ul>
             </div>
         </div>
