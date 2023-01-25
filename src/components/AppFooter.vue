@@ -24,28 +24,34 @@ export default {
                     <img src="/logo-restaurant-2x-300x58.png" alt="">
                     <p>Quam eu proin sit massa condimentum. Volutpat non pulvinar aliquet nunc. Quam eu proin sit massa condimentum.</p>
                     <ul class="unstyled-list">
-                        <li class="icon-social" v-for="(item, index) in footer_list" :key="index"  @mouseover="showDropdown(index)">
+                        <li class="icon-social" v-for="(item, index) in footer_list" :key="index">
                             <div class="caption" v-if="index_visible === index">
                                 <span>{{ item.label }}</span>
                             </div>
-                            <a href=""><i :class="item.icon"></i></a>
+                            <a href="" @mouseover="showDropdown(index)" @mouseleave="this.index_visible = ''"><i :class="item.icon"></i></a>
                         </li>
                     </ul>
                 </div>
             </div>
+        </div>
+        <div class="bottom-footer">
+            <p>
+                © Copyright 2012 - 2023 | Avada Theme by <span>ThemeFusion</span> | All Rights Reserved | Powered by <span>WordPress</span>
+            </p>
         </div>
     </footer>
 </template>
 
 <style lang="scss" scoped>
 footer {
-    height: 500px;
+    height: 600px;
     background-image: url('/footer2x.jpg');
     background-size: 130%;
     background-position: top;
+    position: relative;
 
     .container {
-        padding: 5rem 0;
+        padding: 7rem 0;
         width: 40%;
 
         p {
@@ -114,6 +120,25 @@ footer {
                         filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, .1));
                     }
                 }
+            }
+        }
+    }
+
+    .bottom-footer {
+        background-color: black;
+        color: gray;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        text-align: center;
+
+        p {
+            padding: 2rem;
+            margin: 0;
+            font-size: 12px;
+
+            span {
+                color: white;
             }
         }
     }

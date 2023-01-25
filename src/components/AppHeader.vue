@@ -24,7 +24,7 @@ export default {
             </div>
             <div>
                 <ul class="unstyled-list">
-                    <li v-for="(item, index) in navbar_list" :key="index" @mouseover="showDropdown(index)">
+                    <li v-for="(item, index) in navbar_list" :key="index" @mouseover="showDropdown(index)" @mouseleave="this.index_visible = ''">
                         <a>
                             {{ item.label }}
                             <ul class="dropdown-list" v-if="item.dropdown_list && index_visible === index">
