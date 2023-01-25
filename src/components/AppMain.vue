@@ -34,21 +34,21 @@ export default {
                     <h2>The best table in town</h2>
                     <hr>
                     <p>Sed aenean egestas ut aliquam turpis mauris, molestie. Vitae tellus tempor sem id tempus neque, tellus turpis turpis. Morbi tortor id gravida aliquet.</p>
-                    <button>EXPLORE THE MENU</button>
+                    <button class="btn btn-outline-dark">EXPLORE THE MENU</button>
                 </div>
                 <div class="col-4">
                     <img class="icon" src="/sushi-2.png" alt="">
                     <h2>Perfect For Groups</h2>
                     <hr>
                     <p>Quam eu proin sit massa condimentum. Volutpat non pulvinar aliquet nunc. Orci elementum in aliquet a gravida vivamus aliquam turpis vitae.</p>
-                    <button>BUY AVADA TODAY</button>
+                    <button class="btn btn-outline-dark">BUY AVADA TODAY</button>
                 </div>
                 <div class="col-4">
                     <img class="icon" src="/sushi-3.png" alt="">
                     <h2>Fresh produce everyday</h2>
                     <hr>
                     <p>Hendrerit amet, volutpat leo non, commodo maecenas scelerisque tincidunt. Morbi vulputate morbi purus quisque sit sagittis orci elementum gravida.</p>
-                    <button>LEARN MORE ABOUT US</button>
+                    <button class="btn btn-outline-dark">LEARN MORE ABOUT US</button>
                 </div>  
             </div>
         </div>
@@ -57,29 +57,29 @@ export default {
             <div class="image-full"></div>
             <div class="caption-right">
                 <div class="container">
-                    <div class="col-3">
-                        <span>________</span>
+                    <div class="col-2">
+                        <div class="line"></div>
                     </div>
-                    <div class="col-9">
-                        <p>FINE DINING EXPERIENCE</p>
+                    <div class="col-10">
+                        <span class="font-work-sans">FINE DINING EXPERIENCE</span>
                         <h1>THE BEST TABLE IN TOWN</h1>
                         <p>Pellentesque vitae viverra risus, sagittis. Venenatis ridiculus scelerisque nisi in urna nulla.</p>
-                        <button>EXPLORE THE MENU</button>
+                        <button class="btn btn-outline-light">EXPLORE THE MENU</button>
                     </div>
                 </div>
             </div>
         </div>
         <!-- third section -->
         <div id="third-section" class="container">
-            <div class="row"> 
-            <h1 class="text-center">What critics are saying about us</h1>
+            <h1 class="title">What critics are saying about us</h1>
             <hr>
+            <div class="row"> 
                 <div class="col-6">
                     <img src="/blog72x-1200x1375.jpg" alt="">
                 </div>
                 <div class="col-6">
                     <div class="container bg-black">
-                        <p>MEGGY STEWART</p>
+                        <span class="font-work-sans">MEGGY STEWART</span>
                         <h1>NEW YORK TIMES</h1>
                         <div>
                             <i class="fa-solid fa-star"></i>
@@ -95,7 +95,7 @@ export default {
                         <p>
                             Mmalesuada ullamcorper amet. Pretium pretium dignissim nisi. 
                         </p>
-                        <button>READ FULL ARTICLE</button>
+                        <button class="btn btn-outline-light">READ FULL ARTICLE</button>
                     </div>
                 </div>
             </div>
@@ -124,7 +124,7 @@ export default {
                 <div class="col-6 ps-4">
                     <div class="image-right">
                         <div class="container">
-                            <p>PATRICK MONROE</p>
+                            <span>PATRICK MONROE</span>
                             <h1>GLOBE AND MAIL</h1>
                             <div>
                                 <i class="fa-solid fa-star"></i>
@@ -325,6 +325,11 @@ export default {
     .col-4 {
         padding: 0 3rem 7rem;
 
+        hr {
+            width: 20%;
+            margin: 1rem auto;
+        }
+
         p {
             font-size: 18px;
             padding-bottom: 1rem;
@@ -332,6 +337,11 @@ export default {
 
         .icon {
             padding: 2rem;
+        }
+
+        .btn {
+            font-family: 'Work Sans', sans-serif;
+            padding: 10px 20px;
         }
     }
 }
@@ -363,8 +373,25 @@ export default {
             display: flex;
             padding: 4rem;
 
+            .line {
+                width: 50%;
+                height: 1px;
+                background-color: white;
+                margin-top: 10px;
+            }
+
             h1 {
                 font-size: 80px;
+                padding: 3rem 0;
+            }
+
+            p {
+                font-size: 20px;
+                padding-bottom: 3rem;
+            }
+
+            .font-work-sans {
+                font-family: 'Work Sans', sans-serif;
             }
         }
     }
@@ -373,8 +400,20 @@ export default {
 
 #third-section {
 
-    .row {
+    .title {
+        font-family: 'Lora', serif;
+        font-style: italic;
         padding-top: 5rem;
+        text-align: center;
+    }
+
+    hr {
+        width: 10%;
+        margin: 1rem auto
+    }
+
+    .row {
+        padding-top: 3rem;
 
         .image-left {
             background-image: linear-gradient(black, transparent), url('/info52x.jpg');
@@ -414,6 +453,19 @@ export default {
 
             .container {
                 padding: 5rem;
+
+                i {
+                    padding-right: 15px;
+                }
+
+                .btn {
+                    font-family: 'Work Sans', sans-serif;
+                    padding: 10px 20px;
+                }
+
+                .font-work-sans {
+                    font-family: 'Work Sans', sans-serif;
+                }
             }
         }
     }

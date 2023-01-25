@@ -17,7 +17,6 @@ export default {
                         <h1>FINE DINING EXPERIENCE</h1>
                         <p>Pellentesque vitae viverra risus, sagittis. Venenatis ridiculus scelerisque nisi in urna nulla. Sit tempor a et nisl, ac felis.</p>
                         <button class="btn btn-outline-light">BUY AVADA TODAY</button>
-                        
                     </div>
                 </div>
             </div>
