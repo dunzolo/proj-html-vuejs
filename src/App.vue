@@ -41,27 +41,27 @@ export default {
           active: false,
           dropdown_box: [
             {
-              title: 'titolo',
+              title: 'Hors d\'oeuvres',
               icon: 'fa-solid fa-plate-wheat fa-5x',
-              paragraph: 'paragrafo',
+              paragraph: 'Cras Ultricies Ligula Sed Magna Dictum Porta',
               background_image: '/mm-1.jpg'
             },
             {
-              title: 'titolo',
+              title: 'Main course',
               icon: 'fa-solid fa-bowl-rice fa-5x',
-              paragraph: 'paragrafo',
+              paragraph: 'Curabitur Aliquet Quam Id Dui Posuere Blandit',
               background_image: '/mm-2.jpg'
             },
             {
-              title: 'titolo',
+              title: 'Dessert & coffee',
               icon: 'fa-solid fa-cookie-bite fa-5x',
-              paragraph: 'paragrafo',
+              paragraph: 'Pellentesque In Ipsum Id Orci Porta Dapibus',
               background_image: '/mm-3.jpg'
             },
             {
-              title: 'titolo',
+              title: 'Drinks & cocktails',
               icon: 'fa-solid fa-martini-glass-citrus fa-5x',
-              paragraph: 'paragrafo',
+              paragraph: 'Vivamus Suscipit Tortor Volutpat',
               background_image: '/mm-4.jpg'
             },
           ]
