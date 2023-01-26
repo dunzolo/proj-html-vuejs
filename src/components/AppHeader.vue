@@ -54,20 +54,19 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@use '../style/partials/mixins' as *;
+
 header {
     background-color: transparent;
     position: absolute;
     width: 100%;
 
     .container-header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        @include flex-align-center-between;
         width: 90%;
         margin: 0 auto;
         padding: 2rem 2rem 0 2rem;
         position: relative;
-
 
         .logo img {
             width: 250px;
@@ -75,16 +74,13 @@ header {
 
         .unstyled-list {
             list-style-type: none;
-            display: flex;
-            align-items: center;
+            @include flex-center;
             margin-bottom: 0px; //bootstrap aggiunge di default margin-bottom
             cursor: pointer;
             font-family: 'Work Sans', sans-serif;
 
             .items {
-                display: flex;
-                align-items: center;
-                justify-content: center;
+                @include flex-align-justify-center;
                 height: 3rem;
 
                 & a {
@@ -92,8 +88,7 @@ header {
                     color: grey;
                     padding: 0px 20px;
                     font-size: 15px;
-                    display: flex;
-                    align-items: center;
+                    @include flex-center;
                     height: 100%;
 
                     &.active {
@@ -123,7 +118,6 @@ header {
                         top: 100%;
                         border-radius: 5px;
 
-
                         li {
                             padding: 1rem;
 
@@ -147,34 +141,25 @@ header {
                             width: calc(100% / 4);
 
                             .box-card {
+                                @include bg-cover;
                                 background-image: linear-gradient(black, transparent);
-                                background-size: 100%;
                                 height: 400px;
-                                width: 100%;
                                 text-align: center;
                                 padding: 5rem 4rem;
 
                                 p {
                                     font-family: 'Lora', serif;
-
                                 }
 
                                 i {
                                     padding: 2rem;
                                 }
                             }
-
                         }
                     }
-
                 }
-
             }
-
-
-
         }
     }
-
 }
 </style>

@@ -26,6 +26,8 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@use '../style/partials/mixins' as *;
+
 .jumbotron {
     height: 950px;
 
@@ -45,9 +47,7 @@ export default {
             background-color: black;
             color: white;
             width: 50%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            @include flex-column-center;
 
             .container {
                 display: flex;
@@ -55,8 +55,6 @@ export default {
 
                 .line {
                     width: 50%;
-                    height: 1px;
-                    background-color: white;
                     margin-top: 10px;
                 }
 
@@ -69,20 +67,8 @@ export default {
                     font-size: 20px;
                     padding-bottom: 3rem;
                 }
-
-                .btn {
-                    font-family: 'Work Sans', sans-serif;
-                    padding: 10px 20px;
-                }
-
-
-                .font-work-sans {
-                    font-family: 'Work Sans', sans-serif;
-                }
             }
-
         }
     }
-
 }
 </style>

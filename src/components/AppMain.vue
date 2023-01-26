@@ -1,13 +1,30 @@
 <script>
-export default {
+import FoodCard from './FoodCard.vue';
+import CriticsCard from './CriticsCard.vue';
+import NewsCard from './NewsCard.vue';
+import ListsCard from './ListsCard.vue';
 
+import { store } from '../store.js';
+
+export default {
+    components: {
+        FoodCard,
+        CriticsCard,
+        NewsCard,
+        ListsCard
+    },
+    data() {
+        return {
+            store
+        }
+    },
 }
 </script>
 
 <template lang="">
     <main>
         <!-- first section -->
-        <div class="container">
+        <div id="first-section" class="container">
             <div class="row">
                 <div class="col-6">
                     <p>
@@ -29,31 +46,11 @@ export default {
             </div>
             <!-- row cards -->
             <div class="row text-center">
-                <div class="col-4">
-                    <img class="icon" src="/sushi-1.png" alt="">
-                    <h2>The best table in town</h2>
-                    <hr>
-                    <p>Sed aenean egestas ut aliquam turpis mauris, molestie. Vitae tellus tempor sem id tempus neque, tellus turpis turpis. Morbi tortor id gravida aliquet.</p>
-                    <button class="btn btn-outline-dark">EXPLORE THE MENU</button>
-                </div>
-                <div class="col-4">
-                    <img class="icon" src="/sushi-2.png" alt="">
-                    <h2>Perfect For Groups</h2>
-                    <hr>
-                    <p>Quam eu proin sit massa condimentum. Volutpat non pulvinar aliquet nunc. Orci elementum in aliquet a gravida vivamus aliquam turpis vitae.</p>
-                    <button class="btn btn-outline-dark">BUY AVADA TODAY</button>
-                </div>
-                <div class="col-4">
-                    <img class="icon" src="/sushi-3.png" alt="">
-                    <h2>Fresh produce everyday</h2>
-                    <hr>
-                    <p>Hendrerit amet, volutpat leo non, commodo maecenas scelerisque tincidunt. Morbi vulputate morbi purus quisque sit sagittis orci elementum gravida.</p>
-                    <button class="btn btn-outline-dark">LEARN MORE ABOUT US</button>
-                </div>  
+                <FoodCard v-for="(item, index) in store.array_foods" :key="index" :food="item"/>
             </div>
         </div>
-        <!-- second section -->
-        <div class="container-full">
+        <!-- second section container full-->
+        <div id="second-section" class="container-full">
             <div class="image-full"></div>
             <div class="caption-right">
                 <div class="container">
@@ -100,48 +97,7 @@ export default {
                 </div>
             </div>
             <div class="row">
-                <div class="col-6 pe-4">
-                    <div class="image-left">
-                        <div class="container">
-                            <span class="font-work-sans">MARY MAXEY</span>
-                            <h2>THE GUARDIAN</h2>
-                            <div>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                            </div>
-                            <hr>
-                            <p>
-                                Non arcu mauris tortor ultrices mollis tellus euismod fermentum. Habitant amet tincidunt id sapien accumsan sed.
-                            </p>
-                            <button class="btn btn-outline-light">READ FULL ARTICLE</button>
-                        </div>
-                    </div>
-                     <!-- <img src="/info52x.jpg" alt=""> -->
-                </div>
-                <div class="col-6 ps-4">
-                    <div class="image-right">
-                        <div class="container">
-                            <span class="font-work-sans">PATRICK MONROE</span>
-                            <h2>GLOBE AND MAIL</h2>
-                            <div>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                            </div>
-                            <hr>
-                            <p>
-                                Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Nulla porttitor accumsan tincidunt.
-                            </p>
-                            <button class="btn btn-outline-light">READ FULL ARTICLE</button>
-                        </div>
-                    </div>
-                    <!-- <img src="/info12x.jpg" alt=""> -->
-                </div>
+                <CriticsCard v-for="(item, index) in store.array_critics" :key="index" :critics="item"/>
             </div>
         </div>
         <!-- fourth section -->
@@ -149,7 +105,7 @@ export default {
             <div class="container-full">
                 <div class="row">
                     <div class="col-12 text-center">
-                        <span class="caption">KUNG PAO CHICKEN - $32</span>
+                        <span class="caption font-work-sans">KUNG PAO CHICKEN - $32</span>
                     </div>
                 </div>
             </div>
@@ -157,24 +113,10 @@ export default {
         <!-- fifth section -->
         <div id="fifth-section">
             <div class="container text-center">
-                <h1>Latest news & promotions</h1>
+                <h1 class="title">Latest news & promotions</h1>
                 <hr>
                 <div class="row">
-                    <div class="col-4">
-                        <img src="/blog92x-1200x1375.jpg" alt="">
-                        <h2>THE BEST COFFEE IN TOWN</h2>
-                        <p>By admin|January 7th, 2020|Categories: News</p>
-                    </div>
-                    <div class="col-4">
-                        <img src="/blog72x-1200x1375.jpg" alt="">
-                        <h2>DISCOVER OUR NEW MENU</h2>
-                        <p>By admin|January 7th, 2020|Categories: News</p>
-                    </div>
-                    <div class="col-4">
-                        <img src="/blog82x-1200x1375.jpg" alt="">
-                        <h2>WE NOW ACCEPT SQUARE!</h2>
-                        <p>By admin|January 7th, 2020|Categories: News</p>
-                    </div>
+                    <NewsCard v-for="(item, index) in store.array_news" :key="index" :news="item" />
                 </div>
             </div>
         </div>
@@ -183,14 +125,14 @@ export default {
             <div class="image-full"></div>
             <div class="caption-right">
                 <div class="container">
-                    <div class="col-3">
-                        <span>________</span>
+                    <div class="col-2">
+                        <div class="line"></div>
                     </div>
-                    <div class="col-9">
-                        <p>ENJOY YOUR MEAL AT HOME</p>
+                    <div class="col-10">
+                        <span class="font-work-sans">ENJOY YOUR MEAL AT HOME</span>
                         <h1>TAKEOUT NOW AVAILABLE</h1>
                         <p>Pellentesque vitae viverra risus, sagittis. Venenatis ridiculus scelerisque nisi in urna nulla non arcu moris tortor.</p>
-                        <button>VIEW TAKEOUT MENU</button>
+                        <button class="btn btn-outline-light">VIEW TAKEOUT MENU</button>
                     </div>
                 </div>
             </div>
@@ -198,93 +140,27 @@ export default {
         <!-- seventh section -->
         <div id="seventh-section" class="container-large"> 
             <div class="row">
-                <div class="col-4">
-                    <div class="container">
-                        <h1>HORS D’OEUVRES</h1>
-                        <div>
-                            <h2>AHI SALMON NIGIRI</h2>
-                            <p>Eget vulputate vitae quis rutrum blandit sed. Quam nulla sit lacinia.</p>
-                            <span>$48</span>
-                        </div>
-                        <div>
-                            <h2>UMI MASU SALAD</h2>
-                            <p>Mollis ornare sit sapien, sodales. Cursus duis proin semper quisque.</p>
-                            <span>$21</span>
-                        </div>
-                        <div>
-                            <h2>TEMAKI WITH CRAB</h2>
-                            <p>Ac vel, risus ornare senectus placerat duis amet dictumst tellus.</p>
-                            <span>$32</span>
-                        </div>
-                        <div>
-                            <h2>CALIFORNIA ROLLS</h2>
-                            <p>Ac vel, risus ornare senectus placerat duis amet dictumst tellus.</p>
-                            <span>$22</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4 menu">
-                    <div class="container">
-                        <h1>MAIN COURSE</h1>
-                        <div>
-                            <h2>BRAISED ABALONE</h2>
-                            <p>Mollis ornare sit sapien, sodales. Cursus duis proin semper quisque.</p>
-                            <span>$52</span>
-                        </div>
-                        <div>
-                            <h2>TWICE COOKED PORK</h2>
-                            <p>Ac vel, risus ornare senectus placerat duis amet dictumst tellus.</p>
-                            <span>$21</span>
-                        </div>
-                        <div>
-                            <h2>KUNG PAO CHICKEN</h2>
-                            <p>Quis duis sit dictum aliquam a velit enim. Tellus in sit augue aliquam.</p>
-                            <span>$32</span>
-                        </div>
-                        <div>
-                            <h2>CHAR SIU & SUSHIS</h2>
-                            <p>Feugiat rhoncus ipsum tristique purus diam, et dolor molestie.</p>
-                            <span>$48</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="container">
-                        <h1>DESSERTS</h1>
-                        <div>
-                            <h2>CHOCOLATE BALL CAKE</h2>
-                            <p>In pellentesque in felis massa vehicula. In sed euismod ut.</p>
-                            <span>$13</span>
-                        </div>
-                        <div>
-                            <h2>LIME PIE WITH CRUST</h2>
-                            <p>Mollis ornare sit sapien, sodales. Cursus duis proin semper quisque.</p>
-                            <span>$14</span>
-                        </div>
-                        <div>
-                            <h2>RASBERRY PEAR CAKE</h2>
-                            <p>Eget vulputate vitae quis rutrum blandit sed. Quam nulla sit.</p>
-                            <span>$18</span>
-                        </div>
-                        <div>
-                            <h2>CAFE' AU LAIT</h2>
-                            <p>Eget vulputate vitae quis rutrum blandit sed. Quam nulla sit.</p>
-                            <span>$6</span>
-                        </div>
-                    </div>
-                </div>
+                <ListsCard v-for="(item, index) in store.array_lists" :key="index" :list="item" />
             </div>
         </div>
         <!-- eigth section -->
         <div id="eigth-section">
             <div class="container-full">
-                <div class="row">
+                <div class="row background-image">
                     <div class="box">
-                        <h1>BRAISED ABALONE</h1>
-                        <span>$52</span>
-                        <hr>
-                        <p>Pretium accumsan porttitor viverra leo gravida mollis imperdiet. Fringilla nibh pharetra sociis leo amet.</p>
-                        <button>BUY AVADA TODAY</button>
+                        <div class="row">
+                            <div class="col-10">
+                                <h1>BRAISED ABALONE</h1>
+                            </div>
+                            <div class="col-2">
+                                <span><b>$52</b></span>
+                            </div>
+                            <div class="col-12">
+                                <hr>
+                                <p>Pretium accumsan porttitor viverra leo gravida mollis imperdiet. Fringilla nibh pharetra sociis leo amet.</p>
+                                <button class="btn btn-outline-light">BUY AVADA TODAY</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -293,7 +169,9 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-.container {
+@use '../style/partials/mixins' as *;
+
+#first-section.container {
     .row {
         padding-top: 7rem;
     }
@@ -324,33 +202,12 @@ export default {
 
     .col-4 {
         padding: 0 3rem 7rem;
-
-        hr {
-            width: 20%;
-            margin: 1rem auto;
-        }
-
-        p {
-            font-size: 18px;
-            padding-bottom: 1rem;
-        }
-
-        .icon {
-            padding: 2rem;
-        }
-
-        .btn {
-            font-family: 'Work Sans', sans-serif;
-            padding: 10px 20px;
-        }
     }
 }
 
-.container-full {
+#second-section.container-full {
     height: 800px;
     display: flex;
-
-
 
     .image-full {
         width: 60%;
@@ -359,15 +216,12 @@ export default {
         background-size: 120%;
     }
 
-
     .caption-right {
         width: 40%;
         height: 100%;
         background-color: black;
         color: white;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        @include flex-column-center;
 
         .container {
             display: flex;
@@ -375,8 +229,6 @@ export default {
 
             .line {
                 width: 50%;
-                height: 1px;
-                background-color: white;
                 margin-top: 10px;
             }
 
@@ -389,13 +241,8 @@ export default {
                 font-size: 20px;
                 padding-bottom: 3rem;
             }
-
-            .font-work-sans {
-                font-family: 'Work Sans', sans-serif;
-            }
         }
     }
-
 }
 
 #third-section {
@@ -418,32 +265,6 @@ export default {
     .row {
         padding-top: 3rem;
 
-        .image-left {
-            background-image: linear-gradient(black, transparent), url('/info52x.jpg');
-            background-size: 100%;
-            height: 700px;
-            width: 100%;
-            object-fit: cover;
-            color: white
-        }
-
-        .image-right {
-            background-image: linear-gradient(black, transparent), url('/info12x.jpg');
-            background-size: 100%;
-            height: 700px;
-            width: 100%;
-            object-fit: cover;
-            color: white
-        }
-
-        .col-6.image-right {
-            padding-left: 2rem;
-        }
-
-        .col-6.image-left {
-            padding-right: 2rem;
-        }
-
         .col-6 {
             padding: 0;
             color: white;
@@ -462,23 +283,18 @@ export default {
                     padding: 3rem 0;
                 }
 
+                p {
+                    font-size: 20px;
+                    padding: 1rem 0;
+                }
+
                 i {
                     padding-right: 15px;
                     padding-bottom: 3rem;
                 }
-
-                .btn {
-                    font-family: 'Work Sans', sans-serif;
-                    padding: 10px 20px;
-                }
-
-                .font-work-sans {
-                    font-family: 'Work Sans', sans-serif;
-                }
             }
         }
     }
-
 }
 
 #fourt-section {
@@ -493,13 +309,17 @@ export default {
             background-image: url('/page52x.jpg');
             background-size: 150%;
             background-position: center;
-            position: relative;
 
-            .caption {
-                font-weight: 700;
-                position: absolute;
-                bottom: 10px;
-                color: white;
+            .col-12 {
+                display: flex;
+                align-items: end;
+                justify-content: center;
+
+                .caption {
+                    padding-bottom: 20px;
+                    font-weight: 700;
+                    color: white;
+                }
             }
         }
     }
@@ -507,23 +327,26 @@ export default {
 
 #fifth-section {
     .container {
-        padding-top: 3rem;
+
+        .title {
+            font-family: 'Lora', serif;
+            padding-top: 5rem;
+            text-align: center;
+            color: black;
+        }
 
         hr {
             width: 10%;
-            margin: auto;
+            margin: 1rem auto;
         }
 
         .row {
-            padding-top: 2rem;
+            padding: 2rem 0 5rem 0;
 
             .col-4 {
+                height: 700px;
                 padding: 0 1rem;
-
-                img {
-                    width: 100%;
-                    height: 600px;
-                }
+                position: relative;
             }
         }
     }
@@ -541,43 +364,18 @@ export default {
 #seventh-section.container-large {
     width: 90%;
     margin: 0 auto;
-    // height: 300px;
 
     .row {
         height: 100%;
         padding: 5rem 0;
-
-        .col-4 {
-            padding: 0;
-            margin-top: 3rem;
-            height: 100%;
-            background-color: #E8E8E8;
-
-            &.menu {
-                margin-top: 0;
-                background-image: linear-gradient(black, transparent), url('/misc22x.jpg');
-                background-size: 120%;
-                background-position: 0;
-                color: white;
-
-            }
-
-            .container {
-                margin-top: 2rem;
-                margin-bottom: 2rem;
-                width: 80%;
-            }
-        }
-
     }
-
 }
 
 #eigth-section {
     .container-full {
         height: 800px;
 
-        .row {
+        .row.background-image {
             margin: 0;
             width: 100%;
             height: 100%;
@@ -591,8 +389,23 @@ export default {
                 left: 10%;
                 background-color: black;
                 color: white;
-                width: 500px;
+                width: 470px;
                 padding: 5rem;
+
+                h1 {
+                    font-size: 4rem;
+                    padding-bottom: 2rem;
+                }
+
+                hr {
+                    width: 20%;
+                    padding-bottom: 1rem;
+                }
+
+                p {
+                    font-size: 18px;
+                    padding-bottom: 1.5rem;
+                }
             }
         }
     }
