@@ -29,21 +29,27 @@ export default {
                             <span>{{ (item.label).toUpperCase() }}</span>
                             <span class="label-new" v-if="item.label_new">{{ (item.label_new).toUpperCase() }}</span>
                             <span v-if="item.dropdown_list || item.dropdown_box"><i class="fa-solid fa-angle-down"></i></span>
-                            <ul class="dropdown-list" v-if="item.dropdown_list && index_visible === index">
-                                <li v-for="(i, index) in item.dropdown_list" :key="index">
-                                    <span>{{ i }}</span>
-                                </li>
-                            </ul>
-                            <ul class="dropdown-box" v-if="item.dropdown_box && index_visible === index">
-                                <li class="box" v-for="(item, index) in item.dropdown_box" :key="index">
-                                    <div class="box-card" :style="{ 'background-image': `url(${item.background_image})`}">
-                                        <h2>{{ item.title }}</h2>
-                                        <i :class= item.icon></i>
-                                        <p>{{ item.paragraph }}</p>
-                                        <i class="fa-thin fa-sushi"></i>
-                                    </div>
-                                </li>
-                            </ul>
+                            <transition name="show">
+                                <ul class="dropdown-list" v-if="item.dropdown_list && index_visible === index">
+                                    <li v-for="(i, index) in item.dropdown_list" :key="index">
+                                        <span>{{ i }}</span>
+                                    </li>
+                                </ul>
+                            </transition>
+                            <transition name="show">
+                                <ul class="dropdown-box" v-if="item.dropdown_box && index_visible === index">
+                                    <li class="box" v-for="(item, index) in item.dropdown_box" :key="index" :style="{ 'background-image': `url(${item.background_image})`}">
+                                        <div class="box-card" >
+                                            <div class="content">
+                                                <h2>{{ item.title }}</h2>
+                                                <i :class= item.icon></i>
+                                                <p>{{ item.paragraph }}</p>
+                                                <i class="fa-thin fa-sushi"></i>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </transition>
                         </a>
                     </li>
                     <i class="fa-solid fa-cart-shopping text-light"></i>
@@ -110,6 +116,16 @@ header {
                         padding-left: 0.5rem;
                     }
 
+                    .show-enter-active,
+                    .show-leave-active {
+                        transition: opacity 1s;
+                    }
+
+                    .show-enter-from,
+                    .show-leave-to {
+                        opacity: 0;
+                    }
+
                     .dropdown-list {
                         background-color: #3B3B3B;
                         position: absolute;
@@ -139,9 +155,9 @@ header {
 
                         .box {
                             width: calc(100% / 4);
+                            @include bg-cover;
 
                             .box-card {
-                                @include bg-cover;
                                 background-image: linear-gradient(black, transparent);
                                 height: 400px;
                                 text-align: center;
@@ -153,6 +169,15 @@ header {
 
                                 i {
                                     padding: 2rem;
+                                }
+
+                                .content {
+                                    // inserisco nella classe in cui deve avvenire la traniszione la rispettiva proprietà
+                                    transition: scale 0.5s;
+                                }
+
+                                & .content:hover {
+                                    scale: 1.1;
                                 }
                             }
                         }
