@@ -136,6 +136,9 @@ header {
 
                         li {
                             padding: 1rem;
+                            background-color: transparent;
+                            transition: background-color .5s;
+                            border-radius: 5px;
 
                             &:hover {
                                 background-color: #BDA16B;
@@ -173,7 +176,7 @@ header {
 
                                 .content {
                                     // inserisco nella classe in cui deve avvenire la traniszione la rispettiva proprietà
-                                    transition: scale 0.5s;
+                                    transition: scale 0.7s;
                                 }
 
                                 & .content:hover {
